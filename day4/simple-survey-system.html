@@ -4,102 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Online Survey</title>
 </head>
 
 <body>
-    <header>
-        <h1>Fitness Survey</h1>
-        <p>Health and Lifestyle Questionnaire</p>
-    </header>
+    <h1>Customer Feedback Survey</h1>
+    <p>Please take a moment to complete the survey below</p>
+    <!-- Creating Form -->
     <form action="#" method="post">
-        <!-- Basic Details -->
-        <section id="basic">
-            <div><!-- Name input -->
-                <label for="name">Name:</label><br>
-                <input type="text" name="name" id="name"><br>
-            </div>
-            <div><!-- Age input  -->
-                <label for="age">Age:</label><br>
-                <input type="number" name="age" id="age"><br>
-            </div>
-            <div> <!-- Place input -->
-                <label for="city">City:</label><br>
-                <input type="text" name="city" id="city"><br>
-            </div>
-            <div> <!-- phone no. input  -->
-                <label for="phone">Phone no.:</label><br>
-                <input type="tel" name="phone" id="phone"><br>
-            </div>
-            <div><!-- Email input -->
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email"><br>
-            </div>
-            <hr>
+        <!-- Question 1: name field -->
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name"><br><br>
 
-        </section>
-        <!-- Health related Question -->
-        <section id="health-question">
-            <div>
-                <label for="exercise-per-week">How many days a week do you do exercise?</label><br>
-                <input type="number" name="exercise-per-week" id="exercise-time">
-            </div>
-            <hr>
-            <div>
-                <label for="exercise-time">How much time do you spend for a regular exercise in
-                    minutes?</label><br>
-                <input type="number" name="exercise-time" id="exercise-time">
-            </div>
-            <hr>
-            <div>
-                <label for="place">Where do you prefer to do exercise?</label><br>
+        <!-- Question 2: age input field-->
+        <label for="age">Your Age:</label>
+        <input type="number" id="age" name="age"><br><br>
 
-                <label for="gym">
-                    <input type="radio" name="place" id="gym">Gym
-                </label>
-                <label for="home">
-                    <input type="radio" name="place" id="home">Home
-                </label>
-                <label for="park">
-                    <input type="radio" name="place" id="park">Park
-                </label><br>
-                <label for="other">&nbsp;Other:
-                    <input type="text" name="place" id="other">
-                </label>
+        <!-- Question 3: favorite color dropdown -->
+        <label for="color">Favorite Color:</label>
+        <select id="color" name="color">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select><br><br>
 
+        <!--Question 4 feedback text area-->
+        <label for="feedback">Your Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+        <br><br>
 
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
 
-            </div>
-            <hr>
-            <div>
-                <label for="prefer-time">When do you prefer to do exercise?</label><br>
-                <label for="gym">
-                    <input type="checkbox" name="prefer-time" id="morning">Morning
-                </label>
-                <label for="home">
-                    <input type="checkbox" name="prefer-time" id="afternoon">Afternoon
-                </label>
-                <label for="park">
-                    <input type="checkbox" name="prefer-time" id="middle">Middle of the day
-                </label>
-                <label for="other">
-                    <input type="checkbox" name="prefer-time" id="evening">Evening
-                </label>
-
-            </div>
-            <hr>
-            <div>
-                <label for="exercise-time">How much time do you spend for a regular exercise in
-                    minutes?</label><br>
-                <input type="number" name="exercise-time" id="exercise-time">
-            </div>
-            <hr>
-            <div>
-                <label for="exercise-time">How much time do you spend for a regular exercise in
-                    minutes?</label><br>
-                <input type="number" name="exercise-time" id="exercise-time">
-            </div>
     </form>
+
+    <!-- Creating table -->
+    <h2>Survey Responses</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Favorite color</th>
+            <th>Feedback</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>30</td>
+            <td>Blue</td>
+            <td>Great service! Keep it up.</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>25</td>
+            <td>Green</td>
+            <td>Would love to see more options.</td>
+        </tr>
+    </table>
+
+    <!-- Using list -->
+    <h3>Instructions:</h3>
+    <ul>
+        <li>Fill in your name and age in the first two fields</li>
+        <li>Select your favorite color from the dropdown list.</li>
+        <li>Provide your feedback in the text box below.</li>
+        <li>Click the "Submit" button to submit your responses.</li>
+    </ul>
+
 </body>
 
 </html>

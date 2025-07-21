@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey Form</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -12,115 +12,116 @@
         <h1>Fitness Survey</h1>
         <p>Health and Lifestyle Questionnaire</p>
     </header>
-    <form action="#" method="post" style="text-align: center;">
-        <table>
-            <tr>
-                <td>
-                    <!-- Basic Details -->
+    <form action="#" method="post">
+        <!-- Basic Details -->
+        <section id="basic">
+            <div><!-- Name input -->
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="name"><br>
+            </div>
+            <div><!-- Age input  -->
+                <label for="age">Age:</label><br>
+                <input type="number" name="age" id="age"><br>
+            </div>
+            <div> <!-- Place input -->
+                <label for="city">City:</label><br>
+                <input type="text" name="city" id="city"><br>
+            </div>
+            <div> <!-- phone no. input  -->
+                <label for="phone">Phone no.:</label><br>
+                <input type="tel" name="phone" id="phone"><br>
+            </div>
+            <div><!-- Email input -->
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email"><br>
+            </div>
+            <hr>
 
-                    <section id="basic">
-                        <div><!-- Name input -->
-                            <label for="name">Name:</label><br>
-                            <input type="text" name="name" id="name"><br>
-                        </div>
-                        <div><!-- Age input  -->
-                            <label for="age">Age:</label><br>
-                            <input type="number" name="age" id="age"><br>
-                        </div>
-                        <div> <!-- Place input -->
-                            <label for="city">City:</label><br>
-                            <input type="text" name="city" id="city"><br>
-                        </div>
-                        <div> <!-- phone no. input  -->
-                            <label for="phone">Name:</label><br>
-                            <input type="tel" name="phone" id="phone"><br>
-                        </div>
-                        <div><!-- Email input -->
-                            <label for="email">Name:</label><br>
-                            <input type="email" name="email" id="email"><br>
-                        </div>
-                    </section>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <!-- Health related Question -->
-                    <section id="health-question">
-                        <div>
-                            <ul style="list-style-type: none">
-                                <li>
-                                    <label for="exercise-per-week">How many days a week do you do exercise?</label><br>
-                                    <input type="number" name="exercise-per-week" id="exercise-time">
-                                </li>
-                                <hr>
-                                <li>
-                                    <label for="exercise-time">How much time do you spend for a regular exercise in
-                                        minutes?</label><br>
-                                    <input type="number" name="exercise-time" id="exercise-time">
-                                </li>
-                                <hr>
-                                <li>
-                                    <label for="place">Where do you prefer to do exercise?</label>
-                                    <ul style="list-style: none">
-                                        <li><label for="gym">
-                                                <input type="radio" name="place" id="gym">Gym</label>
-                                        </li>
-                                        <li><label for="home">
-                                                <input type="radio" name="place" id="home">Home
-                                            </label></li>
-                                        <li><label for="park">
-                                                <input type="radio" name="place" id="park">Park
-                                            </label></li>
-                                        <li>
-                                            <label for="other">&nbsp;Other:
-                                                <input type="text" name="place" id="other">
-                                            </label>
-                                        </li>
-                                    </ul>
-
-                                </li>
-                                <hr>
-                                <li>
-                                    <label for="prefer-time">When do you prefer to do exercise?</label><br>
-                                    <ul style="list-style: none">
-                                        <li><label for="gym">
-                                                <input type="checkbox" name="prefer-time" id="morning">Morning
-                                            </label></li>
-                                        <li> <label for="home">
-                                                <input type="checkbox" name="prefer-time" id="afternoon">Afternoon
-                                            </label></li>
-                                        <li> <label for="park">
-                                                <input type="checkbox" name="prefer-time" id="middle">Middle of the day
-                                            </label></li>
-                                        <li> <label for="other">
-                                                <input type="checkbox" name="prefer-time" id="evening">Evening
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <hr>
-                                <li>
-                                    <!-- <input type="text" name="prefer-time" id="prefer-time"> -->
-
-                                    <label for="exercise-time">How much time do you spend for a regular exercise in
-                                        minutes?</label><br>
-                                    <input type="number" name="exercise-time" id="exercise-time">
-                                </li>
-                            </ul>
-
-
-                        </div>
-                </td>
-            </tr>
-        </table>
-
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
         </section>
+        <!-- Health related Question -->
+        <section id="health-question">
+            <div>
+                <label for="exercise-per-week">How many days a week do you do exercise?</label><br>
+                <input type="number" name="exercise-per-week" id="exercise-time">
+            </div>
+            <hr>
+            <div>
+                <label for="exercise-time">How much time do you spend for a regular exercise in
+                    minutes?</label><br>
+                <input type="number" name="exercise-time" id="exercise-time">
+            </div>
+            <hr>
+            <div>
+                <label for="place">Where do you prefer to do exercise?</label><br>
+
+                <label for="gym">
+                    <input type="radio" name="place" id="gym">Gym
+                </label>
+                <label for="home">
+                    <input type="radio" name="place" id="home">Home
+                </label>
+                <label for="park">
+                    <input type="radio" name="place" id="park">Park
+                </label><br>
+                <label for="other">&nbsp;Other:
+                    <input type="text" name="place" id="other">
+                </label>
+
+
+
+            </div>
+            <hr>
+            <div>
+                <label for="prefer-time">When do you prefer to do exercise?</label><br>
+                <label for="gym">
+                    <input type="checkbox" name="prefer-time" id="morning">Morning
+                </label>
+                <label for="home">
+                    <input type="checkbox" name="prefer-time" id="afternoon">Afternoon
+                </label>
+                <label for="park">
+                    <input type="checkbox" name="prefer-time" id="middle">Middle of the day
+                </label>
+                <label for="other">
+                    <input type="checkbox" name="prefer-time" id="evening">Evening
+                </label>
+
+            </div>
+            <hr>
+            <div>
+                <label for="exercise-time">How much time do you spend for a regular exercise in
+                    minutes?</label><br>
+                <input type="number" name="exercise-time" id="exercise-time">
+            </div>
+            <hr>
+            <div>
+                <label for="exercise-time">How much time you spend sitting continuesly?</label><br>
+                <input type="number" name="sitting-time" id="sitting-time">
+            </div>
+            <hr>
+            <div>
+                <label for="sports">What is your favorite sport</label>
+                <select name="sports" id="sports">
+                    <option value="select">Select</option>
+                    <option value="football">Football</option>
+                    <option value="basketball">basketball</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="cricket">Cricket</option>
+                    <option value="badminton">Badminton</option>
+                    <option value="vollyball">Vollyball</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <hr>
+            <label for="views">Your view on current Lifestyle</label>
+            <textarea name="views" id="views"></textarea>
+            <hr>
+            <button type="submit" value="submit">Submit</button>
     </form>
+    <footer>
+        <p>Day 7: Week 1 HTML assignment by Jyoti Dercima as on 21-07-2025</p>
+    </footer>
 </body>
 
 </html>
