@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(145deg, blue, rgb(0, 255, 221), white);
+            font-weight: 600;
+        }
+
+        .container {
+            border: 1px solid rgb(108, 29, 169);
+            border-radius: 5px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.464);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .counter {
+            font-size: xx-large;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: medium;
+            background-color: rgba(137, 43, 226, 0.842);
+            border-radius: 5px;
+            margin: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .clicks {
+            font-size: medium;
+            color: rgb(10, 76, 10);
+            word-spacing: 5px;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        #incCount {
+            color: green;
+        }
+
+        #decCount {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- What we are going to create
+We will build a simple web application with the following features:
+
+A counter that displays the current count.
+Buttons to increment and decrement the count.
+Display the number of clicks for both increment and decrement actions, resetting after reaching 10 clicks.-->
+
+    <div class="container">
+        <div class="counter">
+            <p id="count">0</p>
+        </div>
+        <div>
+            <button onclick="dec()">Decrement</button>
+            <button onclick="inc()">Increment</button>
+        </div>
+        <div class="clicks">
+            <p>Click on Increment: <span id="incCount">0</span> </p>
+            <p>Click on Decrement: <span id="decCount">0</span> </p>
+        </div>
+    </div>
+
+    <script>
+        let c = 0, ci = 0, cd = 0;
+        const count = document.getElementById('count');
+        const incCount = document.getElementById('incCount');
+        const decCount = document.getElementById('decCount');
+
+        function inc() {
+            c++;
+            ci = (ci >= 10) ? 0 : ci + 1;
+            update();
+        }
+
+        function dec() {
+            c = c > 0 ? c - 1 : 0;
+            cd = (cd >= 10) ? 0 : cd + 1;
+            update();
+        }
+
+        function update() {
+            count.textContent = c;
+            incCount.textContent = ci;
+            decCount.textContent = cd;
+        }
+    </script>
+</body>
+
+</html>

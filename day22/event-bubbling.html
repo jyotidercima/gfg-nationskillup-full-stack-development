@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 25px;
+            box-sizing: border-box;
+        }
+
+        .grandparent {
+            height: 350px;
+            width: 350px;
+            border: 2px solid red;
+        }
+
+        .parent {
+            height: 250px;
+            width: 250px;
+            border: 2px solid blue;
+        }
+
+        .child {
+            height: 150px;
+            width: 150px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grandparent" id="one">
+        Grandparent
+        <div class="parent" id="two">
+            Parent
+            <div class="child" id="three">
+                Child
+            </div>
+        </div>
+    </div>
+    <script>
+        let grandparent = document.getElementById('one')
+        let parent = document.getElementById('two')
+        let child = document.getElementById('three')
+        grandparent.addEventListener('click', function (e) {
+            e.stopPropagation();
+            console.log("Grandparent Clicked")
+        })
+        parent.addEventListener('click', function (e) {
+            e.stopPropagation();
+            console.log("Parent Clicked")
+        })
+        child.addEventListener('click', function (e) {
+            e.stopPropagation(); //line added for stoping event bubbling
+            console.log("Child Clicked")
+        })
+    </script>
+</body>
+
+</html>

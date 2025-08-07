@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(160deg, orange, yellow, white);
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .container {
+        text-align: center;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.796), rgba(128, 128, 128, 0.51));
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        border-radius: 15px;
+        box-shadow: 2px 2px 5px;
+        padding: 2rem;
+    }
+
+    input[type="text"] {
+        width: calc(100% -100px);
+        padding: 0.8rem;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 2px 2px 4px grey;
+        font-size: 1rem;
+        background: #0f0e0e;
+        color: antiquewhite;
+        font-weight: 400;
+
+    }
+
+    button {
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 2px 2px 4px;
+        background: #34f280;
+        font-weight: 600;
+    }
+
+    .addbtn {
+        background-color: rgb(73, 137, 225);
+    }
+
+    button:hover {
+        background: #2ac768;
+    }
+
+    /* css for task items */
+
+    #task-list div {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background: #ffffff62;
+        border-radius: 6px;
+        box-shadow: 1px 1px 4px grey;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .task {
+        flex: 1;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .delete,
+    .edit {
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .delete:hover {
+        color: #ff4747
+    }
+
+    .edit:hover {
+        color: #174708;
+    }
+
+    svg {
+        fill: currentColor;
+    }
+</style>
+
+<body>
+    <!--
+    What We Are Going To Create
+    We are creating a Todo application where
+
+    Users can add, edit (toggle between "Edit" and "Save"), and delete tasks dynamically.
+    Tasks are stored in local Storage for persistence, and the layout is responsive across devices.
+    Custom CSS with hover effects and animations ensures a sleek, user-friendly experience.
+    -->
+    <div class="container">
+        <input type="text" placeholder="Add a new To-Do task ..">
+        <button class="addbtn">Add</button>
+        <div id="task-list"></div>
+    </div>
+
+    <script>
+        let inputs = document.querySelector('input');
+        let btn = document.querySelector('button');
+        let tasklist = document.getElementById('task-list');
+        let task = [];
+        let localstoragedata = localStorage.getItem("task array");
+
+        // this line checks if the localstoragedata contains any data or not
+        if (localstoragedata != null) {
+            // localstorage can only store strings. to store array or objects they must first be converted into a JSON string using JSON.stringify() 
+            // when retreving data JSON.parse() is used to convert the json string back into its original JS object or array format.
+
+            //here localstoragedata is assumed to be a JSON string retrieved from local storage and JSON.parse() convert it into a JS object or array, which is then assigned to the ogdata variable.
+            //parse --> to break something down into its component parts to understand its structure and meaning. here== analysing a string of characteres (code or data) to identify its structure and elements. 
+            let ogdata = JSON.parse(localstoragedata);
+            task = ogdata;
+            maketodo();
+        }
+
+
+        // in this fuction btn is assigning a listener to the button 
+        btn.addEventListener("click", function () {
+            let query = inputs.value; //this line will save the input of user (task) in varible named query
+            inputs.value = ""; //make input field again empty
+            if (query.trim() === "") { // it input is empty  here trim() --> removes spaces from start and end.
+                alert("Please enter a value."); // alert to enter input
+                throw new Error("empty input field error"); //for developer use this help in understand where what happened and stops the code for running further. shows error in console 
+            }
+
+            //task object with 2 properties 
+            let taskObj = {
+                id: Date.now(), //id property which stores a unique number based on current time 
+                text: query // stores the task user entered input 
+            }
+
+            //this will add the task obj to task array we have declared earlier
+            task.push(taskObj);
+            localStorage.setItem("task array", JSON.stringify(task));
+            // save your task array in the browser's local storage - so it does not vanish on refresh.
+            //JSON.stringify() convert the array to a string format for storage and "task array" is key used to access it later.
+            //setItem saves in key value format here key is task array and value id is JSON stringify task
+
+            maketodo();//calling maketodo() fn call
+
+        });
+
+
+        function maketodo() {
+            tasklist.innerHTML = "";
+            //clearing the old list
+            for (let i = 0; i < task.length; i++) { // loop through the task
+                let { id, text } = task[i]; // this is destructuring - pulls out the id and task from the task object
+                let element = document.createElement('div');// create new div in memory
+                element.innerHTML = `
+                    <span class="task" contenteditable="false">${text}</span>
+                    <button class='edit'>Edit</button>
+                    <span class="delete">
+                        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM13.4142 13.9997L15.182 15.7675L13.7678 17.1817L12 15.4139L10.2322 17.1817L8.81802 15.7675L10.5858 13.9997L8.81802 12.232L10.2322 10.8178L12 12.5855L13.7678 10.8178L15.182 12.232L13.4142 13.9997ZM9 4V6H15V4H9Z">
+                            </path>
+                        </svg>
+                    </span>
+                `; // putting it on the screen 
+                // tasklist.appendChild(element); //show on screen
+
+
+                let delbtn = element.querySelector('.delete');
+                let editbtn = element.querySelector('.edit');
+                let taskText = element.querySelector('.task');
+
+                //delete task
+                delbtn.addEventListener("click", function () {
+                    let filteredarray = task.filter(function (taskobj) {
+                        return taskobj.id != id;
+                    });
+                    task = filteredarray;
+                    localStorage.setItem("task array", JSON.stringify(task));
+                    tasklist.removeChild(element);
+                });
+
+                //edit task
+                editbtn.addEventListener("click", function () {
+                    if (editbtn.innerText === 'Edit') {
+                        taskText.setAttribute('contenteditable', 'true'); //enable editing
+                        taskText.focus(); //focus on the text to start editing
+                        editbtn.innerText = 'Save'; //change button text to 'save'
+                    } else {
+                        taskText.setAttribute('contenteditable', 'false'); //disable editing
+                        let updatedText = taskText.innerText.trim();
+                        if (updatedText !== "") {
+                            task = task.map(function (taskobj) {
+                                if (taskobj.id === id) {
+                                    taskobj.text = updatedText;
+                                }
+                                return taskobj;
+                            });
+                            localStorage.setItem("task array", JSON.stringify(task));
+                        }
+                        editbtn.innerText = 'Edit'; //change button text back to "Edit"
+                    }
+                });
+
+                element.classList.add('todo');
+                tasklist.appendChild(element);
+            }
+        }
+    </script>
+</body>
+
+</html>

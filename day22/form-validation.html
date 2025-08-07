@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+
+<body>
+    <!-- Form Validation  -->
+    <h2>Form Validation</h2>
+    <form id="example">
+        <input type="text" placeholder="Enter something" id="formInput" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Dynamic Content  -->
+    <h2>Dynamic Content</h2>
+    <button id="button">Add Element</button>
+
+    <!-- Interactive Lists  -->
+    <h2>Interactive Lists</h2>
+    <ul id="lists">
+        <li>Interactive Item 1</li>
+        <li>Interactive Item 2</li>
+        <li>Interactive Item 3</li>
+    </ul>
+
+
+    <script>
+        // Form Validation
+        document.querySelector("#example").addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("Input cannot be empty");
+        });
+
+        // Dynamic Content
+        document.querySelector("#button").addEventListener("click", () => {
+            let newDiv = document.createElement("div");
+            newDiv.textContent = "New Element Added";
+            newDiv.style.margin = "10px 0";
+            newDiv.style.backgroundColor = "red";
+            document.body.appendChild(newDiv);
+        });
+
+        // Interactive Lists 
+        let ul = document.querySelector("#lists");
+        ul.addEventListener("click", (e) => {
+            if (e.target.tagName === "LI") {
+                e.target.style.backgroundColor = "yellow";
+            }
+        });
+    </script>
+</body>
+
+</html>
