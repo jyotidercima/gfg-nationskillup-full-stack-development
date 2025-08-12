@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* overflow-x: hidden; */
+    background: linear-gradient(180deg, rgb(0, 71, 0), lightgreen);
+
+}
+
+/* Header section  */
+header {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(18, 12, 4);
+}
+
+header img {
+    margin: 20px 30px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 60px;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.nav-list li {
+    /* background-color: rgba(7, 175, 119, 0.197); */
+    border-radius: 12px;
+    padding: 10px;
+
+}
+
+.nav-list li a {
+    color: rgb(230, 255, 225);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: .3em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Main section  */
+
+#home {
+    height: 80vh;
+    width: 100vw;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home h1 {
+    font-family: "Cinzel", serif;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: red;
+    text-shadow: 1px 0 10px rgb(31, 64, 85);
+    text-align: center;
+}
+
+#home p {
+    display: block;
+    font-family: "Libertinus Serif", serif;
+    color: rgb(112, 241, 215);
+    text-shadow: 1px 0 10px rgba(255, 52, 52, 0.536);
+    padding: 5px;
+    text-align: center;
+
+}
+
+/* About section  */
+
+.intro {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    margin: 1em;
+
+}
+
+.conatiner {
+    height: auto;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.441), rgba(118, 189, 209, 0.447));
+    margin: 10px auto;
+    border-radius: 9px;
+    box-shadow: 0 0 40px 10px rgb(43, 35, 35);
+
+
+}
+
+.me {
+    height: 70%;
+    width: 20%;
+    margin: 20px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex: 1;
+}
+
+#about h1 {
+    font-family: "Cinzel", serif;
+    font-size: 2.5rem;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    color: rgb(8, 17, 52);
+    text-shadow: 1px 0 10px rgb(15, 56, 82);
+}
+
+.para {
+    flex: 2;
+    width: 60%;
+    overflow: -moz-hidden-unscrollable;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.2em;
+    padding: 20px;
+    color: rgb(19, 80, 67);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.437), rgba(75, 212, 240, 0.448));
+    border-radius: 10px;
+
+}
+
+
+/* Project section  */
+#project {
+    width: 70vw;
+    margin: 0 auto;
+
+}
