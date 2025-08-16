@@ -60,7 +60,7 @@ typeEffect();
 // Smooth scroll navigation (for demonstration)
 
 const navLinks = document.querySelectorAll('header p');
-navLinks.fromEach(link => {
+navLinks.forEach(link => {
     link.style.cursor = 'pointer';
     link.onclick = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -88,14 +88,44 @@ const showModal = (text) => {
     modal.style.zIndex = '1000';
 
     const modalContent = document.createElement('div');
-    modalContent.style.background = '#fff';
+    modalContent.style.background = '#3495b5ff';
     modalContent.style.padding = '20px';
     modalContent.style.borderRadius = '10px';
     modalContent.style.maxWidth = '600px';
-    modalContent.innerHTML = `<p>${text}</p><button style="margin-top: 10px;>Close</button>"`;
+    modalContent.innerHTML = `<p>${text}</p><button style="margin: 10px;padding: 10px;">OK</button>`;
 
     modalContent.querySelector('button').onclick = () => document.body.removeChild(modal);
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
 };
 
+
+// Dynamic Year in Footer
+const footer = document.querySelector('footer');
+footer.innerHTML = `© ${new Date().getFullYear()} All right reserved by JD`;
+
+//Scroll to top Button 
+const scrollBtn = document.createElement('button');
+scrollBtn.innerText = '  ↑  ';
+scrollBtn.style.position = 'fixed';
+scrollBtn.style.bottom = '60px';
+scrollBtn.style.fontSize = '20px';
+scrollBtn.style.fontWeight = '900';
+scrollBtn.style.width = '50px';
+scrollBtn.style.right = '20px';
+scrollBtn.style.padding = '10px';
+scrollBtn.style.marginBottom = '10px';
+scrollBtn.style.border = '5px solid white'
+scrollBtn.style.backgroundColor = '#f97020ff';
+scrollBtn.style.color = '#fff';
+scrollBtn.style.borderRadius = '25px';
+scrollBtn.style.cursor = 'pointer';
+scrollBtn.style.display = 'none';
+
+scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+document.body.appendChild(scrollBtn);
+
+//Show btn on scrolling down
+window.onscroll = () => {
+    scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+};
