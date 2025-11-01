@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            gap: 50px;
+            background-color: rgb(216, 175, 255);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+
+        h1 {
+            text-align: center;
+            word-spacing: 30px;
+            letter-spacing: 3px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+
+        input,
+        button {
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 900;
+
+        }
+
+        button {
+            background-color: brown;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Implementing WebSockets in Node.js</h1>
+    <form action="" id="message-form">
+        <input type="text" id="message-input" placeholder="Enter message" autocomplete="off">
+        <button type="submit">Send</button>
+    </form>
+
+    <ul id="messages"></ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on('connect', () => {
+            console.log('Connected to server');
+        });
+        socket.on('newMessage', (message) => {
+            const li = document.createElement('li');
+            li.textContent = `${message}: ${message.text}`;
+
+            document.getElementById('message-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const message = document.getElementById('message-input').value;
+                socket.emit('createMessage', {
+                    from: 'User',
+                    text: message,
+                    createdAt: Date.now()
+                });
+                document.getElementById('message-input').value = '';
+                socket.on('disconnect', () => console.log('Disconnected form server'));
+            })
+        })
+    </script>
+</body>
+
+</html>

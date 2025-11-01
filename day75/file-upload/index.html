@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files</title>
+</head>
+
+<body>
+    <div>
+        <h3>Upload Section</h3>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            File to be uploaded:
+            <input type="file" name="uploadFile" id="">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+
+    <div>
+        <h3>Download Section</h3>
+        <form action="/download" method="get">
+            <button type="submit">Download</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

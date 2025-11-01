@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS</title>
+    <style>
+        body {
+            background-image: linear-gradient(white 50%, red 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: Red;
+        }
+
+        div {
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Client Application</h1>
+    <div id="data"></div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('http://localhost:5000/api/data')
+            .then(res => res.json())
+            .then(data => document.getElementById('data').textContent = data.message)
+            .catch(err => console.error('Error!!! :', err));
+    });
+</script>
+
+</html>

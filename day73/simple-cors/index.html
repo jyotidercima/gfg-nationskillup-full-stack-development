@@ -1,0 +1,18 @@
+<!-- index.html -->
+<html>
+
+<head></head>
+
+<body>
+    <h1>Check the Browser Console for Output</h1>
+
+    <script>
+        // Make a fetch request to the API
+        fetch('http://localhost:3000/data')
+            .then(response => response.json())  // Parse JSON response
+            .then(data => console.log(data))  // Log the data to console
+            .catch(error => console.log('Error:', error));  // Catch any error
+    </script>
+</body>
+
+</html>

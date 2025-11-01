@@ -1,0 +1,1 @@
+Hello this is file.txt which is used here using readStream.
