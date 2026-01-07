@@ -12,6 +12,14 @@
 <body>
     <header>
         <nav id="top-nav">
+            <section id="top-logo">
+                <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="gfg-logo">
+                <div class="search-input">
+                    <img height="15" width="15" src="/day11/gfg-clone/assets/search.png" class="search">
+                    <input type="text" placeholder="search...">
+                    <img height="10" width="10" src="/day11/gfg-clone/assets/cross.png" class="cross">
+                </div>
+            </section>
             <section id="dropdown-nav">
                 <label for="course-dropd">Courses</label>
                 <img src="/day11/gfg-clone/assets/arrow-down-sign-to-navigate.png" height="12px" width="auto"
@@ -110,15 +118,13 @@
                     <option value="all-course">All Courses</option>
                 </select>
             </section>
-            <section id="top-logo">
-                <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="gfg-logo">
-            </section>
+
             <section id="signin-top">
-                <div class="search-input">
+                <!-- <div class="search-input">
                     <img height="30" width="30" src="/day11/gfg-clone/assets/search.png" class="search">
                     <input type="text" placeholder="search...">
                     <img height="20" width="20" src="/day11/gfg-clone/assets/cross.png" class="cross">
-                </div>
+                </div> -->
                 <div class="icon-top">
                     <a href=""><img src="https://www.flaticon.com/free-icons/notification-bell" alt="mode icon"
                             srcset=""></a>
@@ -127,9 +133,9 @@
                     <a href=""><img src="" alt="bell icon" srcset=""></a>
                     <a href=""><img src="" alt="lang icon" srcset=""></a>
                 </div>
-                <div class="signin-top">
+                <!-- <div class="signin-top">
                     <button>Sign In</button>
-                </div>
+                </div> -->
             </section>
         </nav>
         <hr>
@@ -148,12 +154,12 @@
                 <li><a href="#">Courses</a></li>
                 <li><a href="#">Linux</a></li>
                 <li><a href="#">DevOps</a></li>
-                <li><a href="#">SQL</a></li>
+                <!-- <li><a href="#">SQL</a></li>
                 <li><a href="#">Web Development</a></li>
                 <li><a href="#">System Design</a></li>
                 <li><a href="#">Aptitude</a></li>
                 <li><a href="#">GfG Premium</a></li>
-                <li></li>
+                <li></li> -->
             </ul>
         </nav>
         <hr>
@@ -163,25 +169,66 @@
             <h1>Hello, What Do You Want To Learn?</h1>
             <div>
                 <input type="text" name="search" id="main-search">
-                <img height="37px" width="37px" src="/day11/gfg-clone/assets/search.png" alt="mag-glass">
+                <!-- <img height="37px" width="37px" src="/day11/gfg-clone/assets/search.png" alt="mag-glass"> -->
             </div>
-            <div>
+            <div class="search-below-btn">
                 <button class="search-btn">Nation Skillup</button>
                 <button class="search-btn">Full Stack Live Classes</button>
                 <button class="search-btn">Master DS & ML</button>
             </div>
+
+            <div class="hero-box">
+                <div class="top-herobox">
+                    <div class="title-hero">
+                        <div>
+                            <h1>Need help with</h1>
+                            <h1>Career Guidence?</h1>
+
+                        </div>
+                        <h3>Connect with trusted experts, anytime. Get real answers,
+                            real guidance, in real time.</h3>
+                        <button>Explore Now</button>
+                    </div>
+                    <div>
+                        <img class="main-heroimg" width="100" height="100" src="assets/file3.svg" alt="Mentor"
+                            style="color: transparent;">
+
+                    </div>
+                </div>
+                <div class="bottom-hero-button">
+                    <div class="herolowerbtn"><img
+                            src="https://media.geeksforgeeks.org/auth-dashboard-uploads/Frame-1000001823.svg"
+                            alt=""><span>1:1 Expert Sessions</span></div>
+                    <div class="herolowerbtn"><img
+                            src="https://media.geeksforgeeks.org/auth-dashboard-uploads/Frame-10000018241.svg"
+                            alt=""><span>Personalized Feed</span></div>
+                    <div class="herolowerbtn"><img
+                            src="https://media.geeksforgeeks.org/auth-dashboard-uploads/Frame-1000001823-7.svg"
+                            alt=""><span>Flexible & Affordable</span></div>
+                    <div class="herolowerbtn"><img
+                            src="https://media.geeksforgeeks.org/auth-dashboard-uploads/Frame-1000001823-8.svg"
+                            alt=""><span>Build your Network</span></div>
+                </div>
+            </div>
         </section>
+
         <section id="courses">
             <div class="title-view">
-                <h3>Courses</h3>
-                <button>View All</button>
+                <div>
+                    <h3>Courses</h3>
+
+                </div>
+                <div>
+                    <button>View All</button>
+
+                </div>
             </div>
             <div class="course-card">
                 <div class="card box-card">
-                    <div><img src="" alt="">
+                    <div class="imgbox"><img src="" alt="">
                         <h3>Heading</h3>
                     </div>
-                    <div>
+                    <div class="bottom-crs">
                         <h3>Topic-title</h3>
                         <p>Begineer to advance</p>
                         <span>352k+ intersted geeks</span>
@@ -189,10 +236,10 @@
                     </div>
                 </div>
                 <div class="card box-card">
-                    <div><img src="" alt="">
+                    <div class="imgbox"><img src="" alt="">
                         <h3>Heading</h3>
                     </div>
-                    <div>
+                    <div class="bottom-crs">
                         <h3>Topic-title</h3>
                         <p>Begineer to advance</p>
                         <span>352k+ intersted geeks</span>
@@ -200,53 +247,235 @@
                     </div>
                 </div>
                 <div class="card box-card">
-                    <div><img src="" alt="">
+                    <div class="imgbox"><img src="" alt="">
                         <h3>Heading</h3>
                     </div>
-                    <div>
+                    <div class="bottom-crs">
                         <h3>Topic-title</h3>
                         <p>Begineer to advance</p>
                         <span>352k+ intersted geeks</span>
-                        <a href="#">Explore now</a>
+                        <a href=" #">Explore now</a>
                     </div>
                 </div>
                 <div class="card box-card">
-                    <div><img src="" alt="">
+                    <div class="imgbox"><img src="" alt="">
                         <h3>Heading</h3>
                     </div>
-                    <div>
+                    <div class="bottom-crs">
                         <h3>Topic-title</h3>
                         <p>Begineer to advance</p>
                         <span>352k+ intersted geeks</span>
-                        <a href="#">Explore now</a>
+                        <a href=" #">Explore now</a>
                     </div>
                 </div>
                 <div class="card box-card">
-                    <div><img src="" alt="">
+                    <div class="imgbox"><img src="" alt="">
                         <h3>Heading</h3>
                     </div>
-                    <div>
+                    <div class="bottom-crs">
                         <h3>Topic-title</h3>
                         <p>Begineer to advance</p>
                         <span>352k+ intersted geeks</span>
-                        <a href="#">Explore now</a>
+                        <a href=" #">Explore now</a>
                     </div>
                 </div>
                 <div class="card box-card">
-                    <div><img src="" alt="">
+                    <div class="imgbox"><img src="" alt="">
                         <h3>Heading</h3>
                     </div>
-                    <div>
+                    <div class="bottom-crs">
                         <h3>Topic-title</h3>
                         <p>Begineer to advance</p>
                         <span>352k+ intersted geeks</span>
-                        <a href="#">Explore now</a>
+                        <a href=" #">Explore now</a>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="mustexplore">
+            <div class="title-view">
+                <div>
+                    <h3>Must Explore</h3>
+
+                </div>
+                <!-- <div>
+                    <button>View All</button>
+
+                </div> -->
+            </div>
+            <div class="mustexplore-box">
+
+                <div class="boxes-small"><span>Jobs for you</span><iframe src="" frameborder="0"></iframe></div>
+                <div class="boxes-small"><span>Hire with us</span><iframe src="" frameborder="0"></iframe></div>
+                <div class="boxes-small"><span>Advertise with us</span><iframe src="" frameborder="0"></iframe></div>
+                <div class="boxes-small"><span>Placement training</span><iframe src="" frameborder="0"></iframe></div>
+            </div>
+        </section>
+
+        <section class="explore">
+            <div class="title-view">
+                <div>
+                    <h3>Explore</h3>
+
+                </div>
+                <!-- <div>
+                    <button>View All</button>
+
+                </div> -->
+            </div>
+            <div class="explore-container">
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+                <div class="explore-card">
+                    <h2>Data Structure and Algorithms</h2>
+                    <span>View more</span>
+                </div>
+            </div>
+        </section>
+
+
+
+
     </main>
-    <footer></footer>
+    <hr>
+    <footer>
+        <div class="address-div">
+            <img src="assets/gfgFooterLogo.png" alt="logo">
+            <div class="address">
+                <img src="assets/Location-1685004904.svg" frameborder="0"></iframe>
+                <h3>Corporate & Communications Address:</h3>
+                <p>A-143, 7th Floor, Sovereign Corporate Tower, Sector- 136, Noida, Uttar Pradesh (201305)</p>
+            </div>
+            <div class="address">
+                <img src="assets/Location-1685004904.svg" frameborder="0"></iframe>
+                <h3>Registered Address:</h3>
+                <p>K 061, Tower K, Gulshan Vivante Apartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh,
+                    201305</p>
+            </div>
+        </div>
+        <div class="footerlist-cont">
+            <div>
+                <h3>Company</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Legal</li>
+                    <li>Privacy Policy</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                    <li>Corporate Solution</li>
+                    <li>Campus Training Program</li>
+                </ul>
+
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Legal</li>
+                    <li>Privacy Policy</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                    <li>Corporate Solution</li>
+                    <li>Campus Training Program</li>
+                </ul>
+
+            </div>
+            <div>
+                <h3>Tutorials</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Legal</li>
+                    <li>Privacy Policy</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                    <li>Corporate Solution</li>
+                    <li>Campus Training Program</li>
+                </ul>
+
+            </div>
+            <div>
+                <h3>Courses</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Legal</li>
+                    <li>Privacy Policy</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                    <li>Corporate Solution</li>
+                    <li>Campus Training Program</li>
+                </ul>
+
+            </div>
+            <div>
+                <h3>Off-line centers</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Legal</li>
+                    <li>Privacy Policy</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                    <li>Corporate Solution</li>
+                    <li>Campus Training Program</li>
+                </ul>
+
+            </div>
+            <div>
+                <h3>Preparation corner</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Legal</li>
+                    <li>Privacy Policy</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                    <li>Corporate Solution</li>
+                    <li>Campus Training Program</li>
+                </ul>
+
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
